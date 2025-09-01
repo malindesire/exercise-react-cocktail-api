@@ -7,27 +7,12 @@
  * you won’t need.
  */
 
-interface IIngredient {
-	ingredient: string;
-	measure: string | null;
-}
-
-interface ICocktail {
-	id: string;
-	name: string;
-	tags: string[];
-	category: string;
-	alcoholic: boolean;
-	glass: string;
-	instructions: string;
-	thumbnail: string;
-	ingredients: IIngredient[];
-}
+import type { Cocktail } from './types';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function mapRawCocktailData(rawCocktail: any): ICocktail {
+export function mapRawCocktailData(rawCocktail: any): Cocktail {
 	return {
-		id: rawCocktail.idDrink,
+		id: rawCocktail.idDrink || '',
 		name: rawCocktail.strDrink,
 		tags: rawCocktail.strTags ? rawCocktail.strTags.split(',') : [],
 		category: rawCocktail.strCategory,
