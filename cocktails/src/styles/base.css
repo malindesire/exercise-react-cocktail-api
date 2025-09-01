@@ -1,0 +1,37 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	font-family: var(--font-standard);
+	color: var(--color-forest-green);
+}
+
+body {
+	min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-special);
+	color: var(--color-pine-green);
+}
+
+button,
+input[type='submit'] {
+	appearance: none;
+	display: inline-block;
+	color: inherit;
+	font: inherit;
+	line-height: inherit;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	text-align: inherit;
+	cursor: pointer;
+}
