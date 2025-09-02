@@ -1,0 +1,6 @@
+.button {
+	border: 0.1rem solid var(--color-forest-green);
+	border-radius: 1rem;
+	padding: 0 2rem;
+	text-transform: uppercase;
+}
