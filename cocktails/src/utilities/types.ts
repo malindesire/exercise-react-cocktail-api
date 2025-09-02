@@ -21,6 +21,7 @@ export type Image = {
 };
 
 export type ListItem = {
+	id: string;
 	label: string;
 	link: string;
 };

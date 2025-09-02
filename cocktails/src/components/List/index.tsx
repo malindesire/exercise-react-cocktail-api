@@ -10,7 +10,12 @@ export default function List({ items }: ListProps) {
 	return (
 		<ul className={styles.list}>
 			{items.map((item) => (
-				<ListItem label={item.label} link={item.link} />
+				<ListItem
+					key={item.id}
+					id={item.id}
+					label={item.label}
+					link={item.link}
+				/>
 			))}
 		</ul>
 	);
