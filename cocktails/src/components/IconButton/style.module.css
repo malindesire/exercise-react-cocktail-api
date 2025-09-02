@@ -1,0 +1,8 @@
+.button {
+	line-height: 0;
+	padding: 0.5rem;
+}
+
+.prev {
+	transform: rotate(180deg);
+}
