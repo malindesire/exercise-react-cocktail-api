@@ -35,3 +35,12 @@ input[type='submit'] {
 	text-align: inherit;
 	cursor: pointer;
 }
+
+a {
+	color: var(--color-forest-green);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
