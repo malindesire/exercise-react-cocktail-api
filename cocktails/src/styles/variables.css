@@ -6,4 +6,7 @@
 
 	--font-special: 'Arima', system-ui;
 	--font-standard: Arial, Helvetica, sans-serif;
+
+	--gap: 1rem;
+	--page-margin: 2rem;
 }
