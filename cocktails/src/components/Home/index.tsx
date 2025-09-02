@@ -4,18 +4,22 @@ import { useEffect, useState } from 'react';
 import { mapRawCocktailData } from '../../utilities/mapRawCocktailData';
 import type { Cocktail } from '../../utilities/types';
 import Card from '../Card';
+import Button from '../Button';
 
 export default function Home() {
 	const [cocktail, setCocktail] = useState<Cocktail>();
-	useEffect(() => {
+
+	const getRandomCocktail = () => {
 		fetchRandomCocktail().then((result) =>
 			setCocktail(mapRawCocktailData(result.drinks[0]))
 		);
+	};
+
+	useEffect(() => {
+		getRandomCocktail();
 	}, []);
-	console.log(cocktail);
 
 	if (!cocktail) return;
-
 	return (
 		<div className={styles.home}>
 			<Card
@@ -23,6 +27,7 @@ export default function Home() {
 				title={cocktail.name}
 				link=""
 			/>
+			<Button label="Show new cocktail" onClick={getRandomCocktail} />
 		</div>
 	);
 }
