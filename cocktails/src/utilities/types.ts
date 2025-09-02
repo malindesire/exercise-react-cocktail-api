@@ -19,3 +19,8 @@ export type Image = {
 	src: string;
 	alt: string;
 };
+
+export type ListItem = {
+	label: string;
+	link: string;
+};
