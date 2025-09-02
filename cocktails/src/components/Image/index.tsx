@@ -1,9 +1,7 @@
+import type { Image as ImageType } from '../../utilities/types';
 import styles from './style.module.css';
 
-type ImageProps = {
-	src: string;
-	alt: string;
-};
+type ImageProps = ImageType;
 
 export default function Image({ src, alt }: ImageProps) {
 	return (

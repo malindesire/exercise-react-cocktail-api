@@ -14,3 +14,8 @@ export type Cocktail = {
 	thumbnail: string;
 	ingredients: Ingredient[];
 };
+
+export type Image = {
+	src: string;
+	alt: string;
+};
