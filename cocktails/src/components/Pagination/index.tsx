@@ -16,11 +16,21 @@ export default function Pagination({
 }: PaginationProps) {
 	return (
 		<div className={styles.pagination}>
-			<IconButton icon="prev" label="Previous page" onClick={onPrev} />
+			<IconButton
+				icon="prev"
+				label="Previous page"
+				onClick={onPrev}
+				disabled={currentPage <= 1}
+			/>
 			<p>
 				{currentPage} / {pageCount}
 			</p>
-			<IconButton icon="next" label="Next page" onClick={onNext} />
+			<IconButton
+				icon="next"
+				label="Next page"
+				onClick={onNext}
+				disabled={currentPage >= pageCount}
+			/>
 		</div>
 	);
 }
