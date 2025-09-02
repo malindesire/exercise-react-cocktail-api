@@ -3,8 +3,8 @@ import { fetchRandomCocktail } from '../../utilities/api';
 import { useEffect, useState } from 'react';
 import { mapRawCocktailData } from '../../utilities/mapRawCocktailData';
 import type { Cocktail } from '../../utilities/types';
-import Card from '../Card';
-import Button from '../Button';
+import Card from '../../components/Card';
+import Button from '../../components/Button';
 
 export default function Home() {
 	const [cocktail, setCocktail] = useState<Cocktail>();
