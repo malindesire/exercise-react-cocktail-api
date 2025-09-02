@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { ListItem as ListItemType } from '../../utilities/types';
 import ListItem from '../ListItem';
 import styles from './style.module.css';
+import Pagination from '../Pagination';
 
 type ListProps = {
 	items: ListItemType[];
@@ -34,10 +35,12 @@ export default function List({ items }: ListProps) {
 					.slice(start, end)}
 			</ul>
 			{pageCount > 1 && (
-				<>
-					<button onClick={handleOnPrevious}>Prev</button>
-					<button onClick={handleOnNext}>Next</button>
-				</>
+				<Pagination
+					currentPage={page + 1}
+					pageCount={pageCount}
+					onPrev={handleOnPrevious}
+					onNext={handleOnNext}
+				/>
 			)}
 		</section>
 	);
