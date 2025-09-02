@@ -1,16 +1,16 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles/main.css';
-import Home from './views/Home';
+import HomeView from './views/HomeView';
 import { BrowserRouter, Route, Routes } from 'react-router';
-import Layout from './views/Layout';
+import LayoutView from './views/LayoutView';
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route element={<Layout />}>
-					<Route index element={<Home />} />
+				<Route element={<LayoutView />}>
+					<Route index element={<HomeView />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import styles from './style.module.css';
 
-export default function Layout() {
+export default function LayoutView() {
 	return (
 		<main className={styles.main}>
 			<Outlet />

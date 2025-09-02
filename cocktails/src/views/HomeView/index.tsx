@@ -6,7 +6,7 @@ import type { Cocktail } from '../../utilities/types';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
 
-export default function Home() {
+export default function HomeView() {
 	const [cocktail, setCocktail] = useState<Cocktail>();
 
 	const getRandomCocktail = () => {
