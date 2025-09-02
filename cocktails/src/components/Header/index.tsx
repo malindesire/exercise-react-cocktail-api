@@ -9,9 +9,7 @@ export default function Header() {
 				<Cocktail />
 				<h1>Cocktails</h1>
 			</NavLink>
-			<NavLink to={'/search'} className={styles.searchLink}>
-				Search
-			</NavLink>
+			<NavLink to={'/search'}>Search</NavLink>
 		</header>
 	);
 }
