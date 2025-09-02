@@ -1,0 +1,20 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem var(--page-margin);
+	gap: var(--gap);
+}
+
+.logoLink {
+	display: flex;
+	gap: var(--gap);
+}
+
+.logoLink svg {
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.logoLink h1 {
+}
