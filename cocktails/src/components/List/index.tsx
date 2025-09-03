@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ListItem as ListItemType } from '../../utilities/types';
 import ListItem from '../ListItem';
 import styles from './style.module.css';
@@ -11,6 +11,10 @@ type ListProps = {
 export default function List({ items }: ListProps) {
 	const [page, setPage] = useState(0);
 
+	useEffect(() => {
+		setPage(0);
+	}, [items]);
+
 	const pageSize = 10;
 	const pageCount = Math.ceil(items.length / pageSize);
 	const start = page * pageSize;
@@ -21,7 +25,7 @@ export default function List({ items }: ListProps) {
 		setPage((prev) => Math.min(prev + 1, pageCount - 1));
 
 	return (
-		<section className={styles.listSection}>
+		<section>
 			<ul className={styles.list}>
 				{items
 					.map((item) => (
