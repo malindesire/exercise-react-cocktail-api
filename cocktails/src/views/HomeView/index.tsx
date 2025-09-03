@@ -25,7 +25,7 @@ export default function HomeView() {
 			<Card
 				image={{ src: cocktail.thumbnail, alt: cocktail.name }}
 				title={cocktail.name}
-				link=""
+				link={`/cocktail/${cocktail.id}`}
 			/>
 			<Button label="Show new cocktail" onClick={getRandomCocktail} />
 		</div>

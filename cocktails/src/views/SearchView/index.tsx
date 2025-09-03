@@ -29,7 +29,7 @@ export default function SearchView() {
 		return {
 			id: item.id,
 			label: item.name,
-			link: '',
+			link: `/cocktail/${item.id}`,
 		};
 	});
 
