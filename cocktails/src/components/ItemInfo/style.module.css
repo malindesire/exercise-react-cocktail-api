@@ -1,0 +1,17 @@
+.iteminfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--page-margin) 0;
+	gap: var(--gap);
+}
+
+.name {
+	text-align: center;
+}
+
+.ingredient {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gap);
+}
