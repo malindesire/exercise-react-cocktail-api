@@ -1,2 +1,11 @@
+.form,
+.label {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
 .form {
+	gap: var(--gap);
+	align-items: center;
 }

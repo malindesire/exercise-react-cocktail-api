@@ -17,8 +17,8 @@ export default function SearchForm({ inputLabel, onSearch }: SearchFormProps) {
 
 	return (
 		<form className={styles.form} onSubmit={handleSubmit}>
-			<label>
-				{inputLabel}
+			<label className={styles.label}>
+				{inputLabel}:
 				<input
 					type="text"
 					name="searchInput"
