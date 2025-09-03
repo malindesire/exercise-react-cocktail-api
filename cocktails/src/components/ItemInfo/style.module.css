@@ -14,3 +14,7 @@
 	grid-template-columns: 1fr 1fr;
 	gap: var(--gap);
 }
+
+.glass {
+	text-transform: lowercase;
+}

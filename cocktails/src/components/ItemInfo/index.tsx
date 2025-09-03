@@ -22,7 +22,9 @@ export default function ItemInfo({ item, className }: ItemInfoProps) {
 					</div>
 				))}
 			</dl>
-			<p>Served in a {glass}</p>
+			<p>
+				Serve in <span className={styles.glass}>{glass}</span>
+			</p>
 			{tags.length > 0 && <Tag text={tags.join(' . ')} />}
 		</div>
 	);
