@@ -1,4 +1,4 @@
-import IconButton from '../IconButton';
+import ClickableIcon from '../ClickableIcon';
 import styles from './style.module.css';
 
 type PaginationProps = {
@@ -16,7 +16,8 @@ export default function Pagination({
 }: PaginationProps) {
 	return (
 		<div className={styles.pagination}>
-			<IconButton
+			<ClickableIcon
+				element="button"
 				icon="prev"
 				label="Previous page"
 				onClick={onPrev}
@@ -25,7 +26,8 @@ export default function Pagination({
 			<p>
 				{currentPage} / {pageCount}
 			</p>
-			<IconButton
+			<ClickableIcon
+				element="button"
 				icon="next"
 				label="Next page"
 				onClick={onNext}

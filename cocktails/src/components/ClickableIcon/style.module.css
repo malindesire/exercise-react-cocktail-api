@@ -1,4 +1,4 @@
-.button {
+.clickable {
 	line-height: 0;
 	padding: 0.5rem;
 }
@@ -7,7 +7,7 @@
 	transform: rotate(180deg);
 }
 
-.button:disabled {
+.clickable:disabled {
 	opacity: 0.5;
 	cursor: default;
 }
