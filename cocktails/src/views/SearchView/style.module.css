@@ -1,2 +1,18 @@
 .searchview {
+	max-width: 40rem;
+	width: 70%;
+	padding: var(--page-margin);
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+}
+
+.message span {
+	font-style: italic;
+}
+
+@media (max-width: 480px) {
+	.searchview {
+		width: 100%;
+	}
 }

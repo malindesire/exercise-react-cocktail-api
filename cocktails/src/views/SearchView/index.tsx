@@ -34,16 +34,24 @@ export default function SearchView() {
 	});
 
 	return (
-		<div className={styles.searchview}>
+		<section className={styles.searchview}>
 			<SearchForm
 				inputLabel="Search cocktail by name"
 				onSearch={setSearchWord}
 			/>
 			{cocktails.length > 0 ? (
-				<List items={cocktails} />
-			) : (
-				<p>No cocktails found.</p>
-			)}
-		</div>
+				<>
+					<h2 className={styles.message}>
+						Search results for <span>"{searchWord}"</span>
+					</h2>
+					<List items={cocktails} />
+				</>
+			) : searchWord !== '' ? (
+				<h2 className={styles.message}>
+					No cocktails with the name <span>"{searchWord}"</span> was
+					found.
+				</h2>
+			) : null}
+		</section>
 	);
 }

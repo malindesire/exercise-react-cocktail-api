@@ -1,7 +1,3 @@
-.listSection {
-	padding: var(--page-margin) 0;
-}
-
 .list {
 	list-style: none;
 	padding: 0;
@@ -9,4 +5,5 @@
 	flex-direction: column;
 	gap: 0.5rem;
 	margin-bottom: var(--gap);
+	height: 17rem;
 }
