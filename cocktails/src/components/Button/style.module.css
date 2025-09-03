@@ -6,3 +6,8 @@
 	text-transform: uppercase;
 	text-align: center;
 }
+
+.button:hover,
+.button:is(input):hover {
+	font-weight: 600;
+}
