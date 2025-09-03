@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router';
 import { Cocktail } from './Cocktail';
 import styles from './style.module.css';
+import ClickableIcon from '../ClickableIcon';
 
 export default function Header() {
 	return (
@@ -9,7 +10,12 @@ export default function Header() {
 				<Cocktail />
 				<h1>Cocktails</h1>
 			</NavLink>
-			<NavLink to={'/search'}>Search</NavLink>
+			<ClickableIcon
+				element="a"
+				icon="search"
+				link={'/search'}
+				label="Search"
+			/>
 		</header>
 	);
 }
