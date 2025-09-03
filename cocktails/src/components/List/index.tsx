@@ -21,7 +21,7 @@ export default function List({ items }: ListProps) {
 		setPage((prev) => Math.min(prev + 1, pageCount - 1));
 
 	return (
-		<section>
+		<section className={styles.listSection}>
 			<ul className={styles.list}>
 				{items
 					.map((item) => (

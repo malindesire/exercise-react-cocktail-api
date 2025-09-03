@@ -6,9 +6,7 @@ type ListItemProps = ListItemType;
 export default function ListItem({ label, link }: ListItemProps) {
 	return (
 		<li className={styles.listitem}>
-			<a href={link} target="_blank" rel="noreferrer">
-				{label}
-			</a>
+			<a href={link}>{label}</a>
 		</li>
 	);
 }

@@ -1,4 +1,12 @@
+.listSection {
+	padding: var(--page-margin) 0;
+}
+
 .list {
 	list-style: none;
 	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: var(--gap);
 }
