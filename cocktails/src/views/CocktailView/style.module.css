@@ -1,2 +1,6 @@
-.cocktailview {
+.section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: var(--page-margin);
+	gap: var(--gap);
 }

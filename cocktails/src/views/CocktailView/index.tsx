@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { fetchCocktailById } from '../../utilities/api';
 import { mapRawCocktailData } from '../../utilities/mapRawCocktailData';
 import type { Cocktail } from '../../utilities/types';
+import Image from '../../components/Image';
+import ItemInfo from '../../components/ItemInfo';
 
 export default function CocktailView() {
 	const { id } = useParams();
@@ -18,7 +20,10 @@ export default function CocktailView() {
 	}, [id]);
 
 	if (!cocktail) return;
-	console.log(cocktail);
-
-	return <div className={styles.cocktailview}>Hello CocktailView</div>;
+	return (
+		<section className={styles.section}>
+			<Image src={cocktail.thumbnail} alt={cocktail.name} />
+			<ItemInfo item={cocktail} />
+		</section>
+	);
 }
