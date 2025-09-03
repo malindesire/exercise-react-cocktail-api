@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { Arrow } from './Arrow';
 import styles from './style.module.css';
 import { NavLink } from 'react-router';
+import { Search } from './Search';
 
 type BaseProps = {
 	icon: 'prev' | 'next' | 'search';
@@ -32,12 +33,12 @@ export default function ClickableIcon(props: ClickableIconProps) {
 function IconButton({ icon, label, disabled, onClick }: IconButtonProps) {
 	return (
 		<button
-			className={clsx(styles.button, icon === 'prev' && styles.prev)}
+			className={clsx(styles.clickable, icon === 'prev' && styles.prev)}
 			aria-label={label}
 			onClick={onClick}
 			disabled={disabled}
 		>
-			{<Arrow />}
+			{Icon(icon)}
 		</button>
 	);
 }
@@ -45,11 +46,22 @@ function IconButton({ icon, label, disabled, onClick }: IconButtonProps) {
 function IconLink({ icon, label, link }: IconLinkProps) {
 	return (
 		<NavLink
-			className={clsx(styles.button, icon === 'prev' && styles.prev)}
+			className={clsx(styles.clickable, icon === 'prev' && styles.prev)}
 			aria-label={label}
 			to={link}
 		>
-			{<Arrow />}
+			{Icon(icon)}
 		</NavLink>
 	);
+}
+
+function Icon(iconType: string) {
+	switch (iconType) {
+		case 'prev':
+			return <Arrow />;
+		case 'next':
+			return <Arrow />;
+		case 'search':
+			return <Search />;
+	}
 }
