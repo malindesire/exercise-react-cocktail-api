@@ -1,15 +1,17 @@
+import clsx from 'clsx';
 import type { Cocktail } from '../../utilities/types';
 import Tag from '../Tag';
 import styles from './style.module.css';
 
 type ItemInfoProps = {
 	item: Cocktail;
+	className?: string;
 };
 
-export default function ItemInfo({ item }: ItemInfoProps) {
+export default function ItemInfo({ item, className }: ItemInfoProps) {
 	const { name, tags, category, ingredients, glass } = item;
 	return (
-		<div className={styles.iteminfo}>
+		<div className={clsx(styles.iteminfo, className)}>
 			<h2 className={styles.name}>{name}</h2>
 			<Tag text={category} />
 			<dl>

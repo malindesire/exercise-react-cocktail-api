@@ -23,7 +23,7 @@ export default function CocktailView() {
 	return (
 		<section className={styles.section}>
 			<Image src={cocktail.thumbnail} alt={cocktail.name} />
-			<ItemInfo item={cocktail} />
+			<ItemInfo item={cocktail} className={styles.info} />
 		</section>
 	);
 }

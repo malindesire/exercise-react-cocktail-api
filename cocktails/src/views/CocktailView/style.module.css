@@ -3,4 +3,20 @@
 	grid-template-columns: 1fr 1fr;
 	padding: var(--page-margin);
 	gap: var(--gap);
+	max-width: 75rem;
+}
+
+.info {
+	padding-top: var(--page-margin);
+}
+
+@media (max-width: 768px) {
+	.section {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.info {
+		padding-top: 0;
+	}
 }
