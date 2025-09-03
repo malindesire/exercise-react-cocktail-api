@@ -1,0 +1,6 @@
+.tag {
+	background-color: var(--color-forest-green);
+	color: var(--color-mint-green);
+	padding: 0.3rem 1.5rem;
+	border-radius: 1rem;
+}
