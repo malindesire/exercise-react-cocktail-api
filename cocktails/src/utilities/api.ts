@@ -8,8 +8,8 @@ export const fetchRandomCocktail = async () => {
 
 export const fetchCocktailById = async (id: string) => {
 	const res = await fetch(`${baseUrl}/lookup.php?i=${id}`);
-	const cocktail = await res.json();
-	return cocktail;
+	if (!res.ok) throw new Error('Failed to fetch');
+	return res.json();
 };
 
 export const searchCocktailByName = async (name: string) => {

@@ -6,7 +6,7 @@ import LayoutView from './views/LayoutView';
 import HomeView from './views/HomeView';
 import SearchView from './views/SearchView';
 import CocktailView from './views/CocktailView';
-import { randomCocktailLoader } from './utilities/loaders';
+import { cocktailLoader, randomCocktailLoader } from './utilities/loaders';
 
 const router = createBrowserRouter([
 	{
@@ -20,7 +20,12 @@ const router = createBrowserRouter([
 				errorElement: <p>Something went wrong.</p>,
 			},
 			{ path: '/search', element: <SearchView /> },
-			{ path: '/cocktail/:id', element: <CocktailView /> },
+			{
+				path: '/cocktail/:id',
+				element: <CocktailView />,
+				loader: cocktailLoader,
+				errorElement: <p>Something went wrong.</p>,
+			},
 		],
 	},
 ]);
