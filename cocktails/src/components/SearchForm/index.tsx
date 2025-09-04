@@ -1,32 +1,24 @@
-import { useState } from 'react';
 import Button from '../Button';
 import styles from './style.module.css';
+import type { useFetcher } from 'react-router';
 
 type SearchFormProps = {
 	inputLabel: string;
-	onSearch: (value: string) => void;
+	fetcher: ReturnType<typeof useFetcher>;
 };
 
-export default function SearchForm({ inputLabel, onSearch }: SearchFormProps) {
-	const [searchInput, setSearchInput] = useState('');
-
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault();
-		onSearch(searchInput);
-	};
-
+export default function SearchForm({ inputLabel, fetcher }: SearchFormProps) {
 	return (
-		<form className={styles.form} onSubmit={handleSubmit}>
+		<fetcher.Form method="get" action="/search" className={styles.form}>
 			<label className={styles.label}>
 				{inputLabel}:
 				<input
 					type="text"
-					name="searchInput"
-					value={searchInput}
-					onChange={(e) => setSearchInput(e.target.value)}
+					name="q"
+					onChange={(e) => e.currentTarget.form?.requestSubmit()}
 				/>
 			</label>
 			<Button label="Search cocktails" type="submit" />
-		</form>
+		</fetcher.Form>
 	);
 }

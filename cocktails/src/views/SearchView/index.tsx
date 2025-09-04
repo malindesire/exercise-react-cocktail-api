@@ -1,31 +1,22 @@
-import { useEffect, useState } from 'react';
 import List from '../../components/List';
 import styles from './style.module.css';
-import { searchCocktailByName } from '../../utilities/api';
-import { mapRawCocktailData } from '../../utilities/mapRawCocktailData';
 import type { Cocktail } from '../../utilities/types';
 import type { ListItem } from '../../utilities/types';
 import SearchForm from '../../components/SearchForm';
+import { useFetcher } from 'react-router';
+import { mapRawCocktailData } from '../../utilities/mapRawCocktailData';
 
 export default function SearchView() {
-	const [result, setResult] = useState<Cocktail[]>([]);
-	const [searchWord, setSearchWord] = useState('');
+	const fetcher = useFetcher();
+	const dataRaw = fetcher.data?.drinks ?? [];
+	const searchWord = fetcher.formData?.get('q')?.toString() ?? '';
 
-	useEffect(() => {
-		searchCocktailByName(searchWord).then((data) => {
-			if (Array.isArray(data.drinks)) {
-				// eslint-disable-next-line @typescript-eslint/no-explicit-any
-				const mappedData = data.drinks.map((drink: any) =>
-					mapRawCocktailData(drink)
-				);
-				setResult(mappedData);
-			} else {
-				setResult([]);
-			}
-		});
-	}, [searchWord]);
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const mappedData: Cocktail[] = dataRaw.map((drink: any) =>
+		mapRawCocktailData(drink)
+	);
 
-	const cocktails: ListItem[] = result.map((item) => {
+	const cocktails: ListItem[] = mappedData.map((item) => {
 		return {
 			id: item.id,
 			label: item.name,
@@ -37,20 +28,15 @@ export default function SearchView() {
 		<section className={styles.searchview}>
 			<SearchForm
 				inputLabel="Search cocktail by name"
-				onSearch={setSearchWord}
+				fetcher={fetcher}
 			/>
-			{cocktails.length > 0 ? (
+			{cocktails && cocktails.length > 0 ? (
 				<>
-					<h2 className={styles.message}>
-						Search results for <span>"{searchWord}"</span>
-					</h2>
+					<h2 className={styles.message}>Search results</h2>
 					<List items={cocktails} />
 				</>
 			) : searchWord !== '' ? (
-				<h2 className={styles.message}>
-					No cocktails with the name <span>"{searchWord}"</span> was
-					found.
-				</h2>
+				<h2 className={styles.message}>No cocktails found.</h2>
 			) : null}
 		</section>
 	);
