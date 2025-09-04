@@ -1,11 +1,13 @@
-.cardcarousel {
+.cardCarousel {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: var(--page-margin);
+	gap: var(--gap);
+	overflow-x: hidden;
 }
 
 .card {
 	max-width: 30rem;
+	margin: 1rem;
 }
