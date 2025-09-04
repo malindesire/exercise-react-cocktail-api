@@ -14,6 +14,6 @@ export const fetchCocktailById = async (id: string) => {
 
 export const searchCocktailByName = async (name: string) => {
 	const res = await fetch(`${baseUrl}/search.php?s=${name}`);
-	const cocktails = await res.json();
-	return cocktails;
+	if (!res.ok) throw new Error('Failed to fetch');
+	return res.json();
 };
