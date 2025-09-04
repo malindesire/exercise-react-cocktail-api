@@ -4,6 +4,6 @@
 	padding: var(--page-margin);
 	display: flex;
 	flex-direction: column;
-	gap: var(--gap);
+	gap: var(--page-margin);
 	align-items: center;
 }
