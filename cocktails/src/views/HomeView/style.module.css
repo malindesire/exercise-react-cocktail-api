@@ -1,4 +1,4 @@
 .home {
 	width: 100%;
-	padding: var(--page-margin);
+	margin: 0 var(--page-margin) var(--page-margin);
 }
