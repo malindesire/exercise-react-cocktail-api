@@ -1,23 +1,14 @@
 import styles from './style.module.css';
-import { fetchRandomCocktail } from '../../utilities/api';
-import { useEffect, useState } from 'react';
 import { mapRawCocktailData } from '../../utilities/mapRawCocktailData';
 import type { Cocktail } from '../../utilities/types';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
+import { useLoaderData, useRevalidator } from 'react-router';
 
 export default function HomeView() {
-	const [cocktail, setCocktail] = useState<Cocktail>();
-
-	const getRandomCocktail = () => {
-		fetchRandomCocktail().then((result) =>
-			setCocktail(mapRawCocktailData(result.drinks[0]))
-		);
-	};
-
-	useEffect(() => {
-		getRandomCocktail();
-	}, []);
+	const data = useLoaderData();
+	const cocktail: Cocktail = mapRawCocktailData(data.drinks[0]);
+	const { revalidate } = useRevalidator();
 
 	if (!cocktail) return;
 	return (
@@ -27,7 +18,12 @@ export default function HomeView() {
 				title={cocktail.name}
 				link={`/cocktail/${cocktail.id}`}
 			/>
-			<Button label="Show new cocktail" onClick={getRandomCocktail} />
+			<Button
+				label="Show new cocktail"
+				onClick={() => {
+					revalidate();
+				}}
+			/>
 		</div>
 	);
 }

@@ -2,8 +2,8 @@ const baseUrl = process.env.REACT_APP_API_URL;
 
 export const fetchRandomCocktail = async () => {
 	const res = await fetch(`${baseUrl}/random.php`);
-	const cocktail = await res.json();
-	return cocktail;
+	if (!res.ok) throw new Error('Failed to fetch');
+	return res.json();
 };
 
 export const fetchCocktailById = async (id: string) => {
