@@ -1,3 +1,9 @@
+.card {
+	box-shadow: 0 0 0.8rem 0.2rem var(--color-shadow-grey);
+	padding: var(--page-margin);
+	border-radius: 1rem;
+}
+
 .image {
 	margin-bottom: var(--gap);
 }
