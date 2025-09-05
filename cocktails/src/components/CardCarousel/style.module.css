@@ -7,7 +7,22 @@
 	overflow-x: hidden;
 }
 
+.cardContainer {
+	min-height: 39rem;
+}
+
 .card {
 	max-width: 30rem;
 	margin: 1rem;
+}
+
+@media (max-width: 580px) {
+	.cardCarousel {
+		flex-direction: column-reverse;
+		margin-top: 1rem;
+	}
+
+	.cardContainer {
+		min-height: auto;
+	}
 }

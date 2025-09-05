@@ -28,6 +28,7 @@ export default function CardCarousel({ initialItem }: CardCarouselProps) {
 					animate={{ x: '0%', opacity: 1 }} // landar i mitten
 					exit={{ x: '-100%', opacity: 0 }} // åker ut till vänster
 					transition={{ duration: 0.5, ease: 'easeInOut' }}
+					className={styles.cardContainer}
 					layout
 				>
 					<Card
