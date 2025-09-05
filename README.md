@@ -1,4 +1,9 @@
-# The Cocktail DB
+# How to start the project
+You need to add a .env file in the "cocktails" directory with the following variable: `REACT_APP_API_URL=https://www.thecocktaildb.com/api/json/v1/1`
+
+Then run `nvm use` followed by `npm install` and `npm run dev`. Follow the localhost-link in the terminal to view the application.
+
+## The Cocktail DB
 
 <details open>
   <summary>Table of Content</summary>
@@ -19,7 +24,7 @@
 
 </details>
 
-## Instructions
+## Assignment instructions
 
 Your are building a cocktail-wiki that uses data from [The Cocktail DB API](https://www.thecocktaildb.com/api.php). You can see an example of a cocktail-wiki on their [The Cocktail DB Home Page](https://www.thecocktaildb.com/).
 
