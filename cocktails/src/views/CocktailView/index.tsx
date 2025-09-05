@@ -11,7 +11,7 @@ export default function CocktailView() {
 
 	if (!cocktail) return;
 	return (
-		<div className={styles.div}>
+		<div className={styles.cocktailView}>
 			<Image src={cocktail.thumbnail} alt={cocktail.name} />
 			<ItemInfo item={cocktail} className={styles.info} />
 		</div>

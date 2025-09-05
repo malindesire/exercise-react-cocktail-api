@@ -10,7 +10,7 @@ export default function HomeView() {
 
 	if (!cocktail) return;
 	return (
-		<div className={styles.home}>
+		<div className={styles.homeView}>
 			<CardCarousel initialItem={cocktail} />
 		</div>
 	);
