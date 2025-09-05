@@ -4,8 +4,8 @@ import styles from './style.module.css';
 import { fetchRandomCocktail } from '../../utilities/api';
 import { mapRawCocktailData } from '../../utilities/mapRawCocktailData';
 import Card from '../Card';
-import Button from '../Button';
 import { AnimatePresence, motion } from 'framer-motion';
+import Clickable from '../Clickable';
 
 type CardCarouselProps = {
 	initialItem: Cocktail;
@@ -39,7 +39,10 @@ export default function CardCarousel({ initialItem }: CardCarouselProps) {
 					/>
 				</motion.div>
 			</AnimatePresence>
-			<Button label="Show new cocktail" onClick={() => fetchNewItem()} />
+			<Clickable
+				label="Show new cocktail"
+				onClick={() => fetchNewItem()}
+			/>
 		</section>
 	);
 }

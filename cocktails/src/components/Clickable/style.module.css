@@ -1,5 +1,5 @@
-.button,
-.button:is(input) {
+.clickable,
+.clickable:is(input) {
 	border: 0.1rem solid var(--color-forest-green);
 	border-radius: 1rem;
 	padding: 0 2rem;
@@ -7,7 +7,7 @@
 	text-align: center;
 }
 
-.button:hover,
-.button:is(input):hover {
+.clickable:hover,
+.clickable:is(input):hover {
 	font-weight: 600;
 }

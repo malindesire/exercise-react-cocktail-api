@@ -1,4 +1,4 @@
-import Button from '../Button';
+import Clickable from '../Clickable';
 import styles from './style.module.css';
 import type { useFetcher } from 'react-router';
 
@@ -18,7 +18,7 @@ export default function SearchForm({ inputLabel, fetcher }: SearchFormProps) {
 					onChange={(e) => e.currentTarget.form?.requestSubmit()}
 				/>
 			</label>
-			<Button label="Search cocktails" type="submit" />
+			<Clickable label="Search cocktails" type="submit" />
 		</fetcher.Form>
 	);
 }
