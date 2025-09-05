@@ -18,7 +18,7 @@ export default function SearchForm({ inputLabel, fetcher }: SearchFormProps) {
 					onChange={(e) => e.currentTarget.form?.requestSubmit()}
 				/>
 			</label>
-			<Clickable label="Search cocktails" type="submit" />
+			<Clickable element="submit" label="Search cocktails" />
 		</fetcher.Form>
 	);
 }

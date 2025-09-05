@@ -40,6 +40,7 @@ export default function CardCarousel({ initialItem }: CardCarouselProps) {
 				</motion.div>
 			</AnimatePresence>
 			<Clickable
+				element="button"
 				label="Show new cocktail"
 				onClick={() => fetchNewItem()}
 			/>
