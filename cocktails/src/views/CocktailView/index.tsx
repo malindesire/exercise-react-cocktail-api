@@ -11,9 +11,9 @@ export default function CocktailView() {
 
 	if (!cocktail) return;
 	return (
-		<section className={styles.section}>
+		<div className={styles.div}>
 			<Image src={cocktail.thumbnail} alt={cocktail.name} />
 			<ItemInfo item={cocktail} className={styles.info} />
-		</section>
+		</div>
 	);
 }

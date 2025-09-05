@@ -25,7 +25,7 @@ export default function SearchView() {
 	});
 
 	return (
-		<section className={styles.searchview}>
+		<div className={styles.searchview}>
 			<SearchForm
 				inputLabel="Search cocktail by name"
 				fetcher={fetcher}
@@ -38,6 +38,6 @@ export default function SearchView() {
 			) : searchWord !== '' ? (
 				<h2 className={styles.message}>No cocktails found.</h2>
 			) : null}
-		</section>
+		</div>
 	);
 }
