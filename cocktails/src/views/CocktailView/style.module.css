@@ -7,7 +7,7 @@
 }
 
 .info {
-	padding-top: var(--page-margin);
+	padding-top: 10%;
 }
 
 @media (max-width: 768px) {
@@ -17,6 +17,6 @@
 	}
 
 	.info {
-		padding-top: 0;
+		padding-top: var(--page-margin);
 	}
 }
