@@ -1,0 +1,8 @@
+.notFound {
+	width: 100%;
+	margin: var(--page-margin);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--gap);
+}

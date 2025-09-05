@@ -11,6 +11,7 @@ import {
 	randomCocktailLoader,
 	searchCocktailsLoader,
 } from './utilities/loaders';
+import NotFoundView from './views/NotFoundView';
 
 const router = createBrowserRouter([
 	{
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
 				element: <CocktailView />,
 				loader: cocktailLoader,
 				errorElement: <p>Something went wrong.</p>,
+			},
+			{
+				path: '*',
+				element: <NotFoundView />,
 			},
 		],
 	},
