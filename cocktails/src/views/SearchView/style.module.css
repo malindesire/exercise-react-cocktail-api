@@ -12,7 +12,7 @@
 }
 
 @media (max-width: 480px) {
-	.searchview {
+	.searchView {
 		width: 100%;
 	}
 }
