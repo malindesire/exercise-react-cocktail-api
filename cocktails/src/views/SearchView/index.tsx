@@ -25,7 +25,7 @@ export default function SearchView() {
 	});
 
 	return (
-		<div className={styles.searchview}>
+		<div className={styles.searchView}>
 			<SearchForm
 				inputLabel="Search cocktail by name"
 				fetcher={fetcher}
