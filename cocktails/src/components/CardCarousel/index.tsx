@@ -16,7 +16,7 @@ export default function CardCarousel({ initialItem }: CardCarouselProps) {
 
 	const fetchNewItem = async () => {
 		const data = await fetchRandomCocktail();
-		setItem(mapRawCocktailData(data.drinks[0]));
+		setItem(mapRawCocktailData(data));
 	};
 
 	return (

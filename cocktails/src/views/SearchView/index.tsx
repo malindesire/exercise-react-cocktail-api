@@ -8,7 +8,7 @@ import { mapRawCocktailData } from '../../utilities/mapRawCocktailData';
 
 export default function SearchView() {
 	const fetcher = useFetcher();
-	const dataRaw = fetcher.data?.drinks ?? [];
+	const dataRaw = fetcher.data ?? [];
 	const searchWord = fetcher.formData?.get('q')?.toString() ?? '';
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any

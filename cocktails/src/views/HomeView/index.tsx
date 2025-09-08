@@ -6,7 +6,7 @@ import CardCarousel from '../../components/CardCarousel';
 
 export default function HomeView() {
 	const data = useLoaderData();
-	const cocktail: Cocktail = mapRawCocktailData(data.drinks[0]);
+	const cocktail: Cocktail = mapRawCocktailData(data);
 
 	if (!cocktail) return;
 	return (

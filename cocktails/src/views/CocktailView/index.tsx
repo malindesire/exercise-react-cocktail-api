@@ -7,7 +7,7 @@ import ItemInfo from '../../components/ItemInfo';
 
 export default function CocktailView() {
 	const data = useLoaderData();
-	const cocktail: Cocktail = mapRawCocktailData(data.drinks[0]);
+	const cocktail: Cocktail = mapRawCocktailData(data);
 
 	if (!cocktail) return;
 	return (
