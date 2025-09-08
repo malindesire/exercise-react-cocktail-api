@@ -24,9 +24,9 @@ export default function CardCarousel({ initialItem }: CardCarouselProps) {
 			<AnimatePresence mode="wait">
 				<motion.div
 					key={item.id}
-					initial={{ x: '100%', opacity: 0 }} // startar utanför till höger
-					animate={{ x: '0%', opacity: 1 }} // landar i mitten
-					exit={{ x: '-100%', opacity: 0 }} // åker ut till vänster
+					initial={{ x: '100%', opacity: 0 }}
+					animate={{ x: '0%', opacity: 1 }}
+					exit={{ x: '-100%', opacity: 0 }}
 					transition={{ duration: 0.5, ease: 'easeInOut' }}
 					className={styles.cardContainer}
 					layout

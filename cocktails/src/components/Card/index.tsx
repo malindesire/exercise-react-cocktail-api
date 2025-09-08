@@ -13,12 +13,10 @@ type CardProps = {
 
 export default function Card({ image, title, link, className }: CardProps) {
 	return (
-		<div className={clsx(styles.card, className)}>
+		<NavLink className={clsx(styles.card, className)} to={link}>
 			<Image src={image.src} alt={image.alt} className={styles.image} />
 			<h2 className={styles.title}>{title}</h2>
-			<NavLink className={styles.link} to={link}>
-				Read more
-			</NavLink>
-		</div>
+			<p className={styles.link}>Read more</p>
+		</NavLink>
 	);
 }
