@@ -8,6 +8,8 @@ type SearchFormProps = {
 };
 
 export default function SearchForm({ inputLabel, fetcher }: SearchFormProps) {
+	const { state } = fetcher;
+
 	return (
 		<fetcher.Form method="get" action="/search" className={styles.form}>
 			<label className={styles.label}>
@@ -18,7 +20,15 @@ export default function SearchForm({ inputLabel, fetcher }: SearchFormProps) {
 					onChange={(e) => e.currentTarget.form?.requestSubmit()}
 				/>
 			</label>
-			<Clickable element="submit" label="Search cocktails" />
+			<Clickable
+				element="submit"
+				label={
+					state === 'loading'
+						? 'Loading cocktails'
+						: 'Search cocktails'
+				}
+				disabled={state === 'loading'}
+			/>
 		</fetcher.Form>
 	);
 }
