@@ -1,14 +1,15 @@
 import { NavLink } from 'react-router';
 import styles from './style.module.css';
+import clsx from 'clsx';
 
 type BaseProps = {
 	label: string;
+	disabled?: boolean;
 };
 
 type ButtonProps = BaseProps & {
 	element: 'button';
 	onClick: () => void;
-	disabled?: boolean;
 };
 
 type LinkProps = BaseProps & {
@@ -40,14 +41,23 @@ function Button({ label, onClick, disabled }: ButtonProps) {
 	);
 }
 
-function Link({ label, link }: LinkProps) {
+function Link({ label, link, disabled }: LinkProps) {
 	return (
-		<NavLink className={styles.clickable} to={link}>
+		<NavLink
+			className={clsx(styles.clickable, disabled && styles.disabled)}
+			to={link}
+		>
 			{label}
 		</NavLink>
 	);
 }
 
-function Submit({ label }: SubmitProps) {
-	return <input className={styles.clickable} type="submit" value={label} />;
+function Submit({ label, disabled }: SubmitProps) {
+	return (
+		<input
+			className={clsx(styles.clickable, disabled && styles.disabled)}
+			type="submit"
+			value={label}
+		/>
+	);
 }

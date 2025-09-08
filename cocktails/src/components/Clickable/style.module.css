@@ -11,3 +11,9 @@
 .clickable:is(input):hover {
 	font-weight: 600;
 }
+
+.clickable:disabled,
+.clickable:is(.disabled) {
+	opacity: 0.5;
+	cursor: default;
+}
