@@ -1,17 +1,37 @@
 import clsx from 'clsx';
-import type { Cocktail } from '../../utilities/types';
+import type { Cocktail, Ingredient } from '../../utilities/types';
 import Tag from '../Tag';
 import styles from './style.module.css';
 
-type ItemInfoProps = {
-	item: Cocktail;
-	className?: string;
+type BaseProps = {
+	className: string;
 };
 
-export default function ItemInfo({ item, className }: ItemInfoProps) {
-	const { name, tags, category, ingredients, glass } = item;
+type CocktailInfoProps = BaseProps & {
+	item: 'cocktail';
+	cocktail: Cocktail;
+};
+
+type IngredientInfoProps = BaseProps & {
+	item: 'ingredient';
+	ingredient: Ingredient;
+};
+
+type ItemInfoProps = CocktailInfoProps | IngredientInfoProps;
+
+export default function ItemInfo(props: ItemInfoProps) {
 	return (
-		<div className={clsx(styles.iteminfo, className)}>
+		<div className={clsx(styles.iteminfo, props.className)}>
+			{props.item === 'cocktail' && <CocktailInfo {...props} />}
+		</div>
+	);
+}
+
+function CocktailInfo({ cocktail }: CocktailInfoProps) {
+	const { name, tags, category, ingredients, glass } = cocktail;
+
+	return (
+		<>
 			<h2 className={styles.name}>{name}</h2>
 			<Tag text={category} />
 			<dl>
@@ -26,6 +46,6 @@ export default function ItemInfo({ item, className }: ItemInfoProps) {
 				Serve in <span className={styles.glass}>{glass}</span>
 			</p>
 			{tags.length > 0 && <Tag text={tags.join(' . ')} />}
-		</div>
+		</>
 	);
 }

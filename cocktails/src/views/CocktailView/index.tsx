@@ -13,7 +13,11 @@ export default function CocktailView() {
 	return (
 		<div className={styles.cocktailView}>
 			<Image src={cocktail.thumbnail} alt={cocktail.name} />
-			<ItemInfo item={cocktail} className={styles.info} />
+			<ItemInfo
+				item="cocktail"
+				cocktail={cocktail}
+				className={styles.info}
+			/>
 		</div>
 	);
 }
