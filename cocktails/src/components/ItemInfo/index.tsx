@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import type { Cocktail, Ingredient } from '../../utilities/types';
 import Tag from '../Tag';
 import styles from './style.module.css';
+import ExpandableText from '../ExpandableText';
 
 type BaseProps = {
 	className: string;
@@ -57,7 +58,7 @@ function IngredientInfo({ ingredient }: IngredientInfoProps) {
 		<>
 			<h2 className={styles.name}>{name}</h2>
 			<Tag text={category} />
-			<p>{description}</p>
+			<ExpandableText text={description} />
 			<Tag text={alcoholic ? 'Alcoholic' : 'Non-Alcoholic'} />
 		</>
 	);
