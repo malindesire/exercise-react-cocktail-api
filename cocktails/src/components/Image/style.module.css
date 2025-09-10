@@ -1,6 +1,9 @@
 .image {
 	width: 100%;
 	aspect-ratio: 1 / 1;
+	border-radius: 10%;
+	background-color: var(--color-shadow-green-opacity);
+	display: block;
 }
 
 .image img {
@@ -10,4 +13,8 @@
 	object-position: center;
 	display: block;
 	border-radius: 10%;
+}
+
+.image img:is(.error) {
+	display: none;
 }
