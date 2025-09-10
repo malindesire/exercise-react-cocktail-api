@@ -8,10 +8,14 @@ import SearchView from './views/SearchView';
 import CocktailView from './views/CocktailView';
 import {
 	cocktailLoader,
+	ingredientLoader,
+	ingredientsLoader,
 	randomCocktailLoader,
 	searchCocktailsLoader,
 } from './utilities/loaders';
 import NotFoundView from './views/NotFoundView';
+import IngredientsView from './views/IngredientsView';
+import IngredientView from './views/IngredientView';
 
 const router = createBrowserRouter([
 	{
@@ -34,6 +38,18 @@ const router = createBrowserRouter([
 				path: '/cocktail/:id',
 				element: <CocktailView />,
 				loader: cocktailLoader,
+				errorElement: <p>Something went wrong.</p>,
+			},
+			{
+				path: '/ingredients',
+				element: <IngredientsView />,
+				loader: ingredientsLoader,
+				errorElement: <p>Something went wrong.</p>,
+			},
+			{
+				path: '/ingredient/:name',
+				element: <IngredientView />,
+				loader: ingredientLoader,
 				errorElement: <p>Something went wrong.</p>,
 			},
 			{
