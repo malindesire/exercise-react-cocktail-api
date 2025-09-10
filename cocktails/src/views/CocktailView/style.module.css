@@ -1,9 +1,10 @@
 .cocktailView {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(2, calc(50% - var(--gap) / 2));
 	padding: var(--page-margin);
 	gap: var(--gap);
 	max-width: 75rem;
+	width: 100%;
 }
 
 .info {
@@ -11,7 +12,7 @@
 }
 
 @media (max-width: 768px) {
-	.section {
+	.cocktailView {
 		display: flex;
 		flex-direction: column;
 	}
