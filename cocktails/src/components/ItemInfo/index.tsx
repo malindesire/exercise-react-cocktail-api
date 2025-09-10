@@ -57,8 +57,8 @@ function IngredientInfo({ ingredient }: IngredientInfoProps) {
 	return (
 		<>
 			<h2 className={styles.name}>{name}</h2>
-			<Tag text={category} />
-			<ExpandableText text={description} />
+			{category && <Tag text={category} />}
+			{description && <ExpandableText text={description} />}
 			<Tag text={alcoholic ? 'Alcoholic' : 'Non-Alcoholic'} />
 		</>
 	);
