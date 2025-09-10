@@ -30,7 +30,7 @@ export default function IngredientsView() {
 	});
 
 	return (
-		<main className={styles.notFoundView}>
+		<main className={styles.ingredientsView}>
 			<h2>Ingredients</h2>
 			<List items={ingredients} />
 		</main>
