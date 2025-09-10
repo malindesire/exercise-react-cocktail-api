@@ -23,6 +23,7 @@ export default function ItemInfo(props: ItemInfoProps) {
 	return (
 		<div className={clsx(styles.iteminfo, props.className)}>
 			{props.item === 'cocktail' && <CocktailInfo {...props} />}
+			{props.item === 'ingredient' && <IngredientInfo {...props} />}
 		</div>
 	);
 }
@@ -46,6 +47,18 @@ function CocktailInfo({ cocktail }: CocktailInfoProps) {
 				Serve in <span className={styles.glass}>{glass}</span>
 			</p>
 			{tags.length > 0 && <Tag text={tags.join(' . ')} />}
+		</>
+	);
+}
+
+function IngredientInfo({ ingredient }: IngredientInfoProps) {
+	const { name, category, alcoholic, description } = ingredient;
+	return (
+		<>
+			<h2 className={styles.name}>{name}</h2>
+			<Tag text={category} />
+			<p>{description}</p>
+			<Tag text={alcoholic ? 'Alcoholic' : 'Non-Alcoholic'} />
 		</>
 	);
 }
