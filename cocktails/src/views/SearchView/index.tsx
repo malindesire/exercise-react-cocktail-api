@@ -24,19 +24,21 @@ export default function SearchView() {
 	});
 
 	return (
-		<div className={styles.searchView}>
-			<SearchForm
-				inputLabel="Search cocktail by name"
-				fetcher={fetcher}
-			/>
-			{cocktails && cocktails.length > 0 ? (
-				<>
-					<h2 className={styles.message}>Search results</h2>
-					<List items={cocktails} />
-				</>
-			) : (
-				<h2 className={styles.message}>No cocktails found.</h2>
-			)}
-		</div>
+		<main className={styles.searchView}>
+			<div className={styles.searchContainer}>
+				<SearchForm
+					inputLabel="Search cocktail by name"
+					fetcher={fetcher}
+				/>
+				{cocktails && cocktails.length > 0 ? (
+					<>
+						<h2>Search results</h2>
+						<List items={cocktails} />
+					</>
+				) : (
+					<h2>No cocktails found.</h2>
+				)}
+			</div>
+		</main>
 	);
 }

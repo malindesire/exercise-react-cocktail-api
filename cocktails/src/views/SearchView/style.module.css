@@ -1,4 +1,9 @@
 .searchView {
+	display: flex;
+	justify-content: center;
+}
+
+.searchContainer {
 	max-width: 40rem;
 	width: 70%;
 	padding: var(--page-margin);
@@ -7,12 +12,8 @@
 	gap: var(--gap);
 }
 
-.message span {
-	font-style: italic;
-}
-
 @media (max-width: 480px) {
-	.searchView {
+	.searchContainer {
 		width: 100%;
 	}
 }
