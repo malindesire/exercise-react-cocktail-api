@@ -1,4 +1,4 @@
-export type Ingredient = {
+export type IngredientItem = {
 	ingredient: string;
 	measure: string | null;
 };
@@ -12,7 +12,7 @@ export type Cocktail = {
 	glass: string;
 	instructions: string;
 	thumbnail: string;
-	ingredients: Ingredient[];
+	ingredients: IngredientItem[];
 };
 
 export type Image = {
@@ -24,4 +24,13 @@ export type ListItem = {
 	id: string;
 	label: string;
 	link: string;
+};
+
+export type Ingredient = {
+	id: string;
+	name: string;
+	thumbnail: string;
+	category: string;
+	alcoholic: boolean;
+	description: string;
 };
