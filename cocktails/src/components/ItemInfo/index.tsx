@@ -30,7 +30,15 @@ export default function ItemInfo(props: ItemInfoProps) {
 }
 
 function CocktailInfo({ cocktail }: CocktailInfoProps) {
-	const { name, tags, category, ingredients, glass } = cocktail;
+	const {
+		name,
+		tags,
+		category,
+		ingredients,
+		instructions,
+		glass,
+		alcoholic,
+	} = cocktail;
 
 	return (
 		<>
@@ -44,10 +52,12 @@ function CocktailInfo({ cocktail }: CocktailInfoProps) {
 					</div>
 				))}
 			</dl>
+			<p>{instructions}</p>
 			<p>
 				Serve in <span className={styles.glass}>{glass}</span>
 			</p>
 			{tags.length > 0 && <Tag text={tags.join(' . ')} />}
+			<Tag text={alcoholic ? 'Alcoholic' : 'Non-Alcoholic'} />
 		</>
 	);
 }
