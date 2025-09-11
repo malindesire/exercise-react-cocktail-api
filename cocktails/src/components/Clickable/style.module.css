@@ -5,6 +5,7 @@
 	padding: 0 2rem;
 	text-transform: uppercase;
 	text-align: center;
+	height: fit-content;
 }
 
 .clickable:hover,

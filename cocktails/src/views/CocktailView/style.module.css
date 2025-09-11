@@ -1,10 +1,16 @@
 .cocktailView {
 	display: grid;
 	grid-template-columns: repeat(2, calc(50% - var(--gap) / 2));
+	grid-template-rows: auto 1fr;
 	padding: var(--page-margin);
 	gap: var(--gap);
 	max-width: 75rem;
 	width: 100%;
+	justify-items: center;
+}
+
+.image {
+	grid-row: span 2;
 }
 
 .info {
@@ -15,6 +21,7 @@
 	.cocktailView {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 	}
 
 	.info {
