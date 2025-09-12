@@ -6,16 +6,16 @@ import Pagination from '../Pagination';
 
 type ListProps = {
 	items: ListItemType[];
+	pageSize?: number;
 };
 
-export default function List({ items }: ListProps) {
+export default function List({ items, pageSize = 10 }: ListProps) {
 	const [page, setPage] = useState(0);
 
 	useEffect(() => {
 		setPage(0);
 	}, [items]);
 
-	const pageSize = 10;
 	const pageCount = Math.ceil(items.length / pageSize);
 	const start = page * pageSize;
 	const end = start + pageSize;
@@ -24,9 +24,11 @@ export default function List({ items }: ListProps) {
 	const handleOnNext = () =>
 		setPage((prev) => Math.min(prev + 1, pageCount - 1));
 
+	const listHeight = pageSize * 1.7;
+
 	return (
 		<section>
-			<ul className={styles.list}>
+			<ul className={styles.list} style={{ height: `${listHeight}rem` }}>
 				{items
 					.map((item) => (
 						<ListItem
