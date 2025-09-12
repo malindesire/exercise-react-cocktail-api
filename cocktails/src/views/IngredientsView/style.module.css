@@ -1,4 +1,4 @@
 .ingredientsView {
-	padding: var(--page-margin);
+	padding: 0 var(--page-margin) 1rem;
 	width: 100%;
 }

@@ -32,7 +32,7 @@ export default function IngredientsView() {
 	return (
 		<main className={styles.ingredientsView}>
 			<h2>Ingredients</h2>
-			<List items={ingredients} />
+			<List items={ingredients} pageSize={20} />
 		</main>
 	);
 }
