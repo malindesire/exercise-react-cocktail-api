@@ -1,7 +1,7 @@
 # How to start the project
-You need to add a .env file in the "cocktails" directory with the following variable: `REACT_APP_API_URL=https://www.thecocktaildb.com/api/json/v1/1`
+You need to add a .env file in the `cocktails` directory with the following variable: `REACT_APP_API_URL=https://www.thecocktaildb.com/api/json/v1/1`
 
-Then run `nvm use` followed by `npm install` and `npm run dev`. Follow the localhost-link in the terminal to view the application.
+From the `cocktails` directory run `nvm use` followed by `npm install` and `npm run dev`. Follow the localhost-link in the terminal to view the application.
 
 ## The Cocktail DB
 
